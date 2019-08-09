@@ -19,3 +19,11 @@ Route::get('/', 'HomepageController@index');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/entrar', 'EntrarController@index');
+Route::post('/entrar', 'EntrarController@entrar');
+
+Route::get('/teste', 'OrderController@save');
+Route::get('/categorias', 'CategoryController@index');
+Route::get('/categorias/cadastrar', 'CategoryController@createCategory')->name('cadastrar.categoria');
+Route::get('/categorias/cadastrar/nova', 'CategoryController@store');
