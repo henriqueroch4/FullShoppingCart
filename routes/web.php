@@ -24,6 +24,6 @@ Route::get('/entrar', 'EntrarController@index');
 Route::post('/entrar', 'EntrarController@entrar');
 
 Route::get('/teste', 'OrderController@save');
-Route::get('/categorias', 'CategoryController@index');
+Route::get('/categorias', 'CategoryController@index')->name('index.categorias');
 Route::get('/categorias/cadastrar', 'CategoryController@createCategory')->name('cadastrar.categoria');
-Route::get('/categorias/cadastrar/nova', 'CategoryController@store');
+Route::post('/categorias/cadastrar', 'CategoryController@store');
