@@ -4,7 +4,11 @@
     Categorias
 @endsection
 
-@section('conteudo')
+@section('header')
+    Categorias
+@endsection
+
+@section('content')
     <div class="container mt-5">
             <form method="POST">
                 @csrf

@@ -11,9 +11,7 @@
 |
 */
 
-Route::get('/laravel', function () {
-    return view('welcome');
-});
+
 Route::get('/', 'HomepageController@index');
 
 Auth::routes();
@@ -27,3 +25,4 @@ Route::get('/teste', 'OrderController@save');
 Route::get('/categorias', 'CategoryController@index')->name('index.categorias');
 Route::get('/categorias/cadastrar', 'CategoryController@createCategory')->name('cadastrar.categoria');
 Route::post('/categorias/cadastrar', 'CategoryController@store');
+Route::delete('categorias/{id}', 'CategoryController@delete');
