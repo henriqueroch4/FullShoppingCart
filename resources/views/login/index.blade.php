@@ -3,8 +3,12 @@
     Login
 @endsection
 
-@section('conteudo')
+@section('header')
+    Login
+@endsection
+@section('content')
       <div class="container mt-5">
+          @include('errors', ['errors'=>$errors])
           <form method="post">
               @csrf
               <div class="form-group">
