@@ -9,10 +9,15 @@
     <title>@yield('title')</title>
 </head>
 <body>
-        <nav class="navbar navbar-expand-lg navbar-light bg-light mb-2 d-flex justify-content-between">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light mb-2 d-flex justify-content-between align-items-center">
             <a class="navbar navbar-expand-lg" href="/">Home</a>
             @auth
-                <a href="/sair" class="navbar navbar-expand-lg text-danger">Sair</a>    
+            <span class="d-flex align-items-center">
+                <i href="" class="material-icons">account_circle</i>
+                <a href="/sair" class="navbar navbar-expand-lg text-danger">Sair</a>   
+                
+            </span>
+                
             @endauth
             @guest
                 <a href="/entrar" class="navbar navbar-expand-lg">Entrar</a>    

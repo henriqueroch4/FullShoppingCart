@@ -10,7 +10,7 @@
 
 @section('content')
 
-    <form method="POST">
+    <form method="POST" enctype="multipart/form-data">
         @csrf
         <div class="form-group" action="/produtos/criar/">
             <label for="exampleInputEmail1">Nome do produto: </label>
@@ -18,12 +18,12 @@
         </div>
         <div class="form-group">
             <label for="exampleInputEmail1">Preço do produto: </label>
-            <input type="float" class="form-control" name='price' id="price" placeholder="Insira o preço do produto">
+            <input type="number" step="0.01" class="form-control" name='price' id="price" placeholder="Insira o preço do produto">
         </div>
-        <select class="custom-select" id="categoriesSelect" name="categoriesNames">
+        <select class="custom-select" name="category_id">
         <option selected>Categoria do produto</option>
             @foreach ($categories as $category)
-                <option value="{{$category->id}}">{{$category->name}}</option>
+                <option name="category_id" value="{{$category->id}}">{{$category->name}}</option>
             @endforeach
         </select>
         <div class="form-group">
@@ -34,4 +34,5 @@
             Cadastrar
         </button>
     </form>
+    
 @endsection

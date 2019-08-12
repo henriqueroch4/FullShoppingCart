@@ -22,3 +22,4 @@ Route::delete('categorias/{id}', 'CategoryController@delete');
 Route::get('/produtos', 'ProductController@index');
 Route::get('/produtos/criar/', 'ProductController@create');
 Route::post('/produtos/criar/', 'ProductController@store');
+Route::delete('produtos/criar')

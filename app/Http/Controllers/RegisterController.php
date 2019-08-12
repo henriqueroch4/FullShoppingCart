@@ -15,11 +15,11 @@ class RegisterController extends Controller
     }
     public function create(Request $request)
     {
-        $data=$request->except('_token');
+        $data=$request->only('name','email','password');
         $data['password']=Hash::make($data['password']);
         $user = User::create($data);
         Auth::login($user);
 
-        return redirect()->route('/');
+        return redirect()->route('/')->get();
     }
 }

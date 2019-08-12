@@ -17,9 +17,9 @@ class CreateTableProducts extends Migration
             $table->bigIncrements('id');
             $table->string('name');
             $table->float('price', 8, 2);
-            $table->string('image_url');
-            $table->bigInteger('categories_id')->unsigned();
-            $table->foreign('categories_id')->references('id')->on('categories');
+            $table->string('image_url')->nullable();
+            $table->bigInteger('category_id')->unsigned();
+            $table->foreign('category_id')->references('id')->on('categories');
             $table->timestamps();
         });
     }

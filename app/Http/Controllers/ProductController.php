@@ -3,9 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Product;
-use Illuminate\Http\Request;
-use App\Repositories\ImageRepository;
 use App\Category;
+
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class ProductController extends Controller
 {
@@ -19,16 +20,18 @@ class ProductController extends Controller
         $categories=Category::query()->orderBy('name')->get();
         return view('products.create', compact('categories'));
     }
-    public function store(Request $request, ImageRepository $repo)
+    public function store(Request $request)
     {
-        dd($request);
-        $product = Product::create($request->except('_token'));
-
-        dd($product);
+        $category = Category::find($request->category_id);
         
-        if ($request->hasFile('image')) {
-            $product->path_image = $repo->saveImage($request->image, $product->id, 'products', 250);
-        }
+        $data = $request->except('_token', 'image');
+        $path = Storage::putFile('product_image', $request->file('image'));
         
+        $save = $category->products()->create([
+            'name'=>$data['name'],
+            'price'=>$data['price'],
+            'image_url'=>$path
+        ]);
+    
     }
 }
