@@ -32,6 +32,21 @@ class ProductController extends Controller
             'price'=>$data['price'],
             'image_url'=>$path
         ]);
+
+        return redirect()->route('/produtos')->get();
     
+    }
+    public function delete(Request $request)
+    {
+        $product = Product::find($request->id);
+        $product->delete();
+
+        return redirect()->back();
+    }
+    public function seeMore(int $productId)
+    {
+        $product = Product::find($productId);
+
+        return view('products.more', compact('product'));
     }
 }

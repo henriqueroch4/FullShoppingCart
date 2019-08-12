@@ -20,6 +20,6 @@ class RegisterController extends Controller
         $user = User::create($data);
         Auth::login($user);
 
-        return redirect()->route('/')->get();
+        return redirect()->route('home')->get();
     }
 }

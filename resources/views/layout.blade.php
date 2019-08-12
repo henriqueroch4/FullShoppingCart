@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="{{URL::asset('css/style.css')}}">
     <title>@yield('title')</title>
 </head>
 <body>
@@ -13,8 +14,14 @@
             <a class="navbar navbar-expand-lg" href="/">Home</a>
             @auth
             <span class="d-flex align-items-center">
-                <i href="" class="material-icons">account_circle</i>
-                <a href="/sair" class="navbar navbar-expand-lg text-danger">Sair</a>   
+                <a href="javascript:" class="material-icons" onclick="acccountClick()" style="position:relative">account_circle</a>
+                <div class="container account-dropdown list-group" id="account-dropdown" style="display:none">
+                            <a href="#" class="list-group-item list-group-item-action active">Cras justo odio</a>
+                            <a href="#" class="list-group-item list-group-item-action">Dapibus ac facilisis in</a>
+                            <a href="#" class="list-group-item list-group-item-action">Morbi leo risus</a>
+                            <a href="#" class="list-group-item list-group-item-action">Porta ac consectetur ac</a>
+                            <a href="#" class="list-group-item list-group-item-action disabled">Vestibulum at eros</a>
+                </div>
                 
             </span>
                 
@@ -29,5 +36,15 @@
         </div>   
     @yield('content')
     </div>
+    <script>
+        function acccountClick(){
+            dropdown = document.getElementById('account-dropdown');
+            if(dropdown.style.display=="none"){
+                dropdown.style.display="block"
+            }else{
+                dropdown.style.display="none";
+            }
+        }
+    </script>
 </body>
 </html>

@@ -2,11 +2,11 @@
 
 
 
-Route::get('/', 'HomepageController@index');
+Route::get('/', 'HomepageController@index')->name('home');
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/home', 'HomeController@index');
 
 Route::get('/entrar', 'EntrarController@index');
 Route::post('/entrar', 'EntrarController@entrar');
@@ -22,4 +22,5 @@ Route::delete('categorias/{id}', 'CategoryController@delete');
 Route::get('/produtos', 'ProductController@index');
 Route::get('/produtos/criar/', 'ProductController@create');
 Route::post('/produtos/criar/', 'ProductController@store');
-Route::delete('produtos/criar')
+Route::get('produtos/{id}', 'ProductController@seeMore');
+Route::delete('produtos/{id}', 'ProductController@delete');

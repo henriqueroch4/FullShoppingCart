@@ -14,8 +14,8 @@
             <li class="list-group-item d-flex justify-content-between align-items-center">
                 <span id="{{$product->id}}">{{$product->name}}</span>
                 <span class="d-flex">
-                    <a href="" class="btn btn-info btn-sm mr-1"><i class="material-icons">edit</i></a>
-                    <form action="/categorias/{{$product->id}}" method="post" onsubmit="return confirm('Tem certeza que deseja remover o produto {{$product->name}}?')">
+                    <a href="produtos/{{$product->id}}" class="btn btn-info btn-sm mr-1"><i class="material-icons">launch</i></a>
+                    <form action="/produtos/{{$product->id}}" method="post" onsubmit="return confirm('Tem certeza que deseja remover o produto {{$product->name}}?')">
                         @csrf
                         @method('DELETE')
                         <button class="btn btn-danger btn-sm"><i class="material-icons">delete</i></button>
