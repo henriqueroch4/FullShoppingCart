@@ -34,15 +34,15 @@ class ProductController extends Controller
             'image_url'=>$path
         ]);
 
-        return redirect()->route('/produtos')->get();
+        return redirect()->route('products.index');
     
     }
     public function delete(Request $request)
     {
-        dd("teste");
         $product = Product::find($request->id);
         $product->delete();
 
+        return redirect()->route('products.index');
     }
     public function seeMore(int $productId)
     {

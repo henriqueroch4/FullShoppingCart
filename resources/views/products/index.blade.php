@@ -28,11 +28,11 @@
                 <table class="table table-hover">
                         <thead>
                             <tr>
-                            <th scope="col">
+                            {{-- <th scope="col">
                                 <div>
                                     <input type="checkbox" onclick="checkAll(event)">
                                 </div>
-                            </th>
+                            </th> --}}
                             <th scope="col">ID #</th>
                             <th scope="col"></th>
                             <th scope="col">Nome</th>
@@ -44,60 +44,31 @@
                         <tbody>
                             @foreach ($products as $product)
                             <tr>
-                                <td style="width:10px;">
+                                {{-- <td style="width:10px;">
                                     <div>
                                         @csrf
                                         <input type="checkbox" name="products[]" value="{{$product->id}}">
                                     </div>
-                                </td>
+                                </td> --}}
                                 <td style="width:80px;">{{$product->id}}</td>
                                 <td style="width:53px;"><img src="{{url('storage/').'/'.$product->image_url}}" alt="" class="product-img"></td>
                                 <td>{{$product->name}}</td>
                                 <td style="width:150px;">{{number_format($product->price, 2, '.', '')}}</td>
                                 <td style="width:100px; text-align:center;">{{$category::find($product->category_id)->name}}</td>
+                                <td style="width:53px; text-align:center;">
+                                    <form action="produtos/delete/{{$product->id}}" method="POST" onsubmit="return confirm('Deseja deletar o produto {{$product->name}}?')">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button class="btn btn-danger btn-sm"><i class="material-icons">delete</i></button>
+                                    </form>
+                                    
+                                </td>
                             </tr>
                             @endforeach
                         </tbody>
                 </table>
-                <button class="btn btn-dark" onclick="getCheckedInput()">Deletar</button>
+               
             </div>
            
-    <a class="btn btn-primary mt-2 float-right" href="produtos/criar">Cadastrar produto</a>
-    <script>
-        function getCheckedInput(){
-            let formData = new FormData();
-            var checkbox = document.querySelectorAll("input[name='products[]']");
-            checkbox.forEach(element => {
-                if(element.checked){
-                    formData.append('id',element.value)
-                    formData.append
-                    var url=`/produtos/${element.value}`;
-                    fetch(url, {
-                        body: formData,
-                        method: 'DELETE'
-                    }).then(()=>{
-                        console.log("sucesso");
-                    });
-                    formData.delete('id');
-                }
-            });
-            
-        }
-        function checkAll(e){
-            console.log(e.target.checked);
-            var checkbox = document.querySelectorAll("input[name='products[]']");
-            if(e.target.checked){
-                checkbox.forEach(element => {
-                    element.checked=true;
-                });
-            }else{
-                checkbox.forEach(element => {
-                    element.checked=false;
-                });
-            }
-            
-           
-           
-        }
-    </script>
+    <a class="btn btn-primary mt-2 float-right" href="{{route('create.products')}}">Cadastrar produto</a>
 @endsection
