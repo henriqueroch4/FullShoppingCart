@@ -18,6 +18,6 @@ class EntrarController extends Controller
         if(!Auth::attempt($request->only(['email', 'password']))){
             return redirect()->back()->withErrors(['errors'=>'Usuário ou senha incorretos']);
         }
-        return redirect()->route('/');
+        return redirect()->route('home');
     }
 }

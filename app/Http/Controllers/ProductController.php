@@ -13,7 +13,8 @@ class ProductController extends Controller
     public function index()
     {
         $products = Product::query()->orderBy('name')->get();
-        return view('products.index', compact('products'));    
+        $category = Category::class;
+        return view('products.index', compact('products', 'category'));    
     }
     public function create(Category $categories)
     {
@@ -38,15 +39,15 @@ class ProductController extends Controller
     }
     public function delete(Request $request)
     {
+        dd("teste");
         $product = Product::find($request->id);
         $product->delete();
 
-        return redirect()->back();
     }
     public function seeMore(int $productId)
     {
         $product = Product::find($productId);
-
-        return view('products.more', compact('product'));
+        $category = Category::find($product->category_id);
+        return view('products.more', compact('product', 'category'));
     }
 }
