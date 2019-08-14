@@ -44,10 +44,12 @@ class ProductController extends Controller
 
         return redirect()->route('products.index');
     }
-    public function seeMore(int $productId)
-    {
+    public function info(int $productId)
+    {   
         $product = Product::find($productId);
         $category = Category::find($product->category_id);
-        return view('products.more', compact('product', 'category'));
+
+        dd($category);
+        return view('products.info', compact('product', 'category'));
     }
 }
