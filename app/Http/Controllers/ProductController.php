@@ -47,9 +47,9 @@ class ProductController extends Controller
     public function info(int $productId)
     {   
         $product = Product::find($productId);
-        $category = Category::find($product->category_id);
-
-        dd($category);
-        return view('products.info', compact('product', 'category'));
+        $categories = Category::query()->orderBy('id')->get();
+        $productCategory = $categories->find($product->category_id);
+        
+        return view('products.info', compact('product', 'categories', 'productCategory'));
     }
 }

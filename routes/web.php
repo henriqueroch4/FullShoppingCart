@@ -20,7 +20,7 @@ Route::post('/categorias/cadastrar', 'CategoryController@store')->middleware('au
 Route::delete('/categorias/{id}', 'CategoryController@delete')->middleware('autenticator');
 
 Route::get('/produtos', 'ProductController@index')->middleware('autenticator')->name('products.index');
-Route::get('/produtos/{id}', 'ProductController@info')->middleware('autenticator')->name('products.info');
 Route::get('/produtos/criar/', 'ProductController@create')->middleware('autenticator')->name('create.products');
 Route::post('/produtos/criar/', 'ProductController@store')->middleware('autenticator');
 Route::delete('/produtos/delete/{id}', 'ProductController@delete')->middleware('autenticator');
+Route::get('/produtos/{id}', 'ProductController@info')->middleware('autenticator')->name('products.info');
