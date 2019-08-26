@@ -24,3 +24,4 @@ Route::get('/produtos/criar/', 'ProductController@create')->middleware('autentic
 Route::post('/produtos/criar/', 'ProductController@store')->middleware('autenticator');
 Route::delete('/produtos/delete/{id}', 'ProductController@delete')->middleware('autenticator');
 Route::get('/produtos/{id}', 'ProductController@info')->middleware('autenticator')->name('products.info');
+Route::post('/produtos/{id}', 'ProductController@update')->middleware('autenticator');

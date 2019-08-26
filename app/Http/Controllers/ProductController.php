@@ -52,4 +52,24 @@ class ProductController extends Controller
         
         return view('products.info', compact('product', 'categories', 'productCategory'));
     }
+    
+    public function update(Request $request, int $productId){
+        
+
+        
+
+
+        $category = Category::find($request->category_id);
+        $data = $request->except('_token', 'image');
+        //dd($data);
+        $product = $category->products()->find($productId);
+
+        $product->name = $request->nome;
+        $product->save();
+        // if(!($request->image)){
+        //     $path = Storage::putFile('product_image', $request->file('image'));
+        // }
+
+        
+    }
 }

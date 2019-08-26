@@ -45,14 +45,42 @@
 		"ie": 0,
 		"iI": 0,
 		"ma": 1,
-		"mS": 0,
+		"mS": 1,
 		"oA": 0,
-		"oAP": "/products_page.css",
-		"oF": 0,
-		"oS": 0,
+		"oAP": "/products_page.min.css",
+		"oF": 2,
+		"oS": 1,
 		"rwU": 0,
 		"sI": 0,
 		"sU": 0
+		},
+	"/products_page.min.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "/products_page.min-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"/products_page.min.css.map": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/products_page.min.css.map",
+		"oF": 0
+		},
+	"/style-min.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "/style-min-min.css",
+		"oF": 0,
+		"oS": 3
 		},
 	"/style.css": {
 		"aP": 1,
@@ -78,7 +106,7 @@
 	},
 "projectSettings": {
 	"abortBuildOnError": 1,
-	"alwaysUseExternalServer": 0,
+	"alwaysUseExternalServer": 1,
 	"animateCSSInjections": 1,
 	"autoBuildNewItems": 1,
 	"autoprefixerEnableIEGrid": 0,
@@ -1528,7 +1556,7 @@
 			}
 		},
 	"esLintSourceType": 0,
-	"externalServerAddress": "http://localhost:8888",
+	"externalServerAddress": "http://localhost:8000",
 	"gitIgnoreBuildFolder": 1,
 	"hideConfigFile": 0,
 	"jsCheckerReservedNamesString": "",
