@@ -21,7 +21,7 @@
             <input type="number" step="0.01" class="form-control" name='price' id="price" placeholder="Insira o preço do produto">
         </div>
         <div class="form-group">
-            <label for="price">Preço do produto: </label>
+            <label for="price">Categoria do produto: </label>
             <select class="custom-select" name="category_id">
                 <option selected value=null>Categoria do produto</option>
                 @foreach ($categories as $category)
