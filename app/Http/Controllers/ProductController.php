@@ -55,21 +55,17 @@ class ProductController extends Controller
     
     public function update(Request $request, int $productId){
         
-
-        
-
-
-        $category = Category::find($request->category_id);
         $data = $request->except('_token', 'image');
-        //dd($data);
-        $product = $category->products()->find($productId);
-
-        $product->name = $request->nome;
-        $product->save();
-        // if(!($request->image)){
-        //     $path = Storage::putFile('product_image', $request->file('image'));
-        // }
-
         
+        $product = Product::find($productId);
+        $product->update($data);
+        if(($request->image)){
+            $path = Storage::putFile('product_image', $request->file('image'));
+            $product->update([
+                'image_url'=>$path
+            ]);
+        }
+        
+        return redirect()->back();
     }
 }

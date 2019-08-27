@@ -1,0 +1,10 @@
+#Ignorando arquivos .DS_Store
+.DS_Store
+
+#Ignorando arquivos codekit
+config.codekit
+config.codekit3
+
+#Ignorando arquivos css
+*.css
+*.map

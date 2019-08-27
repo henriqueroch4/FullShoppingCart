@@ -13,7 +13,6 @@ Route::post('/entrar', 'EntrarController@entrar');
 Route::get('/registrar', 'RegisterController@index');
 Route::post('/registrar', 'RegisterController@create');
 
-Route::get('/teste', 'OrderController@save');
 Route::get('/categorias', 'CategoryController@index')->name('index.categorias')->middleware('autenticator');
 Route::get('/categorias/cadastrar', 'CategoryController@createCategory')->name('cadastrar.categoria')->middleware('autenticator');
 Route::post('/categorias/cadastrar', 'CategoryController@store')->middleware('autenticator');
