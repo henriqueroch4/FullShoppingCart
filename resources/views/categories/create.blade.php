@@ -9,6 +9,9 @@
 @endsection
 
 @section('content')
+
+@include('header', ["title"=>"Categorias"])
+
     <div class="container mt-5">
             <form method="POST">
                 @csrf

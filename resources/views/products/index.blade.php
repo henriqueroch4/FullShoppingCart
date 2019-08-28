@@ -3,28 +3,16 @@
 @section('css')
     <link rel="stylesheet" href="{{URL::asset('css/products_page.css')}}">
 @endsection
+
 @section('title')
     Produtos
 @endsection
 
-@section('header')
-    Produtos
-@endsection
 
 @section('content')
-        
-            {{-- <li class="list-group-item d-flex justify-content-between align-items-center">
-                <span id="{{$product->id}}">{{$product->name}}</span>
-                <span class="d-flex">
-                    <a href="produtos/{{$product->id}}" class="btn btn-info btn-sm mr-1"><i class="material-icons">launch</i></a>
-                    <form action="/produtos/{{$product->id}}" method="post" onsubmit="return confirm('Tem certeza que deseja remover o produto {{$product->name}}?')">
-                        @csrf
-                        @method('DELETE')
-                        <button class="btn btn-danger btn-sm"><i class="material-icons">delete</i></button>
-                    </form>
-                </span> 
-            </li> --}}
-            <div class="container">
+        @include('header', ['title' => "Produtos"]) 
+            <div class="container mt-5">
+                @include('message', ['message' => $message])
                 <table class="table table-hover">
                         <thead>
                             <tr>
@@ -56,8 +44,8 @@
                             @endforeach
                         </tbody>
                 </table>
-               
+                <a class="btn btn-primary mt-2 float-right" href="{{route('create.products')}}">Cadastrar produto</a>
             </div>
            
-    <a class="btn btn-primary mt-2 float-right" href="{{route('create.products')}}">Cadastrar produto</a>
+    
 @endsection

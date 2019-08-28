@@ -10,11 +10,12 @@ use Illuminate\Support\Facades\Storage;
 
 class ProductController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
         $products = Product::query()->orderBy('name')->get();
         $category = Category::class;
-        return view('products.index', compact('products', 'category'));    
+        $message = $request->session()->get('message');
+        return view('products.index', compact('products', 'category', 'message'));    
     }
     public function create(Category $categories)
     {
@@ -28,12 +29,13 @@ class ProductController extends Controller
         $data = $request->except('_token', 'image');
         $path = Storage::putFile('product_image', $request->file('image'));
         
-        $save = $category->products()->create([
+        $product = $category->products()->create([
             'name'=>$data['name'],
             'price'=>$data['price'],
             'image_url'=>$path
         ]);
 
+        $request->session()->flash('message', "Produto {$product->name} criado");
         return redirect()->route('products.index');
     
     }
@@ -42,6 +44,7 @@ class ProductController extends Controller
         $product = Product::find($request->id);
         $product->delete();
 
+        $request->session()->flash('message', "Produto {$product->name} deletado");
         return redirect()->route('products.index');
     }
     public function info(int $productId)
