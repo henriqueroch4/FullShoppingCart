@@ -8,6 +8,8 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index');
 
+Route::get('/minha-conta', 'AccountController@index')->name('my_account');
+
 Route::get('/entrar', 'EntrarController@index')->name('login');
 Route::post('/entrar', 'EntrarController@entrar');
 Route::get('/registrar', 'RegisterController@index');

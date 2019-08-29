@@ -15,18 +15,20 @@
         <nav class="navbar navbar-expand-lg navbar-light bg-light mb-2 d-flex justify-content-between align-items-center">
             <a class="navbar navbar-expand-lg" href="/">FullShoppingCart</a>
             @auth
-            <span class="d-flex align-items-end">
-                    <a href="javascript:" class="material-icons" id="cart-icon">shopping_cart</a>
-                    <a href="javascript:" class="material-icons" onclick="acccountClick()" style="position:relative; text-decoration:none;">account_circle</a>
+            <span class="d-flex align-items-center">
+                <a href="javascript:" class="material-icons" id="cart-icon">shopping_cart</a>
+                <div class="holder-account-icon align-items-center">
+                    <a href="{{route('my_account')}}" class="material-icons" id="account-icon"style="position:relative; text-decoration:none;">account_circle</a>
                     <div class="container account-dropdown list-group" id="account-dropdown" style="display:none">
-                                <a href="#" class="list-group-item list-group-item-action active">Cras justo odio</a>
-                                <a href="#" class="list-group-item list-group-item-action">Dapibus ac facilisis in</a>
-                                <a href="#" class="list-group-item list-group-item-action">Morbi leo risus</a>
-                                <a href="#" class="list-group-item list-group-item-action">Porta ac consectetur ac</a>
-                                <a href="#" class="list-group-item list-group-item-action disabled">Vestibulum at eros</a>
+                        <a href="#" class="list-group-item list-group-item-action">Minha conta</a>
+                        <a href="#" class="list-group-item list-group-item-action">Meus pedidos</a>
+                        <a href="#" class="list-group-item list-group-item-action">Sair</a>
                     </div>
-            </span>
+                </div>
+                    
                 
+            </span>
+            
             @endauth
             @guest
                 <a href="/entrar" class="navbar navbar-expand-lg">Entrar</a>    
@@ -36,15 +38,7 @@
         @yield('content')
         
     
-    <script>
-        function acccountClick(){
-            dropdown = document.getElementById('account-dropdown');
-            if(dropdown.style.display=="none"){
-                dropdown.style.display="block"
-            }else{
-                dropdown.style.display="none";
-            }
-        }
-    </script>
+    <script src="{{URL::asset('js/plugins/jQuery/jquery.min.js')}}"></script>
+    <script src="{{URL::asset('js/header.js')}}"></script>
 </body>
 </html>
