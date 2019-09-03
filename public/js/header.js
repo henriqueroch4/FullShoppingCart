@@ -1,7 +1,6 @@
 $(document).ready( function(){
-    console.log('carregado');
+	console.log('carregado');
     accountHover();
-    
 })
 
 
@@ -9,8 +8,8 @@ $(document).ready( function(){
 function accountHover(){
     dropdown = document.getElementById('account-dropdown');
     $('.holder-account-icon').mouseover(function (){
-       dropdown.style.display="block";
+		dropdown.style.display="block";
     }).mouseout(function(){
-        dropdown.style.display="none";
+		dropdown.style.display="none";
     });
 }

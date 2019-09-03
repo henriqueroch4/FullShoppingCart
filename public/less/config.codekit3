@@ -4,46 +4,27 @@
 	{
 		"name": "Process All Remaining Files and Folders",
 		"stepType": 1,
-		"uuidString": "3FA9C73F-8DCB-4215-9F93-71EDDC09EFDD"
+		"uuidString": "96F2F974-2207-4FB4-A47A-0816866440EF"
 		}
 	],
 "creatorBuild": "29156",
 "files": {
-	"/.gitignore": {
-		"cB": 0,
-		"ft": 8192,
-		"hM": 0,
-		"oA": 0,
-		"oAP": "/.gitignore",
-		"oF": 0
-		},
-	"/app.css": {
-		"aP": 1,
+	"/bootstrap.fullshoppingcart.less": {
+		"aP": 0,
 		"bl": 0,
-		"ft": 16,
-		"ma": 0,
+		"eJ": 0,
+		"ft": 1,
+		"ie": 0,
+		"iI": 0,
+		"ma": 1,
+		"mS": 1,
 		"oA": 0,
-		"oAP": "/app-min.css",
-		"oF": 0,
-		"oS": 3
-		},
-	"/header.css": {
-		"aP": 1,
-		"bl": 0,
-		"ft": 16,
-		"ma": 0,
-		"oA": 0,
-		"oAP": "/header-min.css",
-		"oF": 0,
-		"oS": 3
-		},
-	"/header.css.map": {
-		"cB": 0,
-		"ft": 8192,
-		"hM": 0,
-		"oA": 0,
-		"oAP": "/header.css.map",
-		"oF": 0
+		"oAP": "/Users/pedro/Desktop/WEB/CODE/FullShoppingCart/public/min/fullshoppingcart.min.css",
+		"oF": 6,
+		"oS": 1,
+		"rwU": 0,
+		"sI": 0,
+		"sU": 0
 		},
 	"/header.less": {
 		"aP": 0,
@@ -54,31 +35,13 @@
 		"iI": 0,
 		"ma": 1,
 		"mS": 0,
-		"oA": 0,
+		"oA": 1,
 		"oAP": "/header.css",
 		"oF": 0,
 		"oS": 0,
 		"rwU": 0,
 		"sI": 0,
 		"sU": 0
-		},
-	"/home.css": {
-		"aP": 1,
-		"bl": 0,
-		"ft": 16,
-		"ma": 0,
-		"oA": 0,
-		"oAP": "/home-min.css",
-		"oF": 0,
-		"oS": 3
-		},
-	"/home.css.map": {
-		"cB": 0,
-		"ft": 8192,
-		"hM": 0,
-		"oA": 0,
-		"oAP": "/home.css.map",
-		"oF": 0
 		},
 	"/home.less": {
 		"aP": 0,
@@ -89,31 +52,13 @@
 		"iI": 0,
 		"ma": 1,
 		"mS": 0,
-		"oA": 0,
+		"oA": 1,
 		"oAP": "/home.css",
 		"oF": 0,
 		"oS": 0,
 		"rwU": 0,
 		"sI": 0,
 		"sU": 0
-		},
-	"/products_page.css": {
-		"aP": 1,
-		"bl": 0,
-		"ft": 16,
-		"ma": 0,
-		"oA": 0,
-		"oAP": "/products_page-min.css",
-		"oF": 0,
-		"oS": 3
-		},
-	"/products_page.css.map": {
-		"cB": 0,
-		"ft": 8192,
-		"hM": 0,
-		"oA": 0,
-		"oAP": "/products_page.css.map",
-		"oF": 0
 		},
 	"/products_page.less": {
 		"aP": 0,
@@ -123,52 +68,14 @@
 		"ie": 0,
 		"iI": 0,
 		"ma": 1,
-		"mS": 1,
-		"oA": 0,
-		"oAP": "/products_page.min.css",
-		"oF": 2,
-		"oS": 1,
+		"mS": 0,
+		"oA": 1,
+		"oAP": "/products_page.css",
+		"oF": 0,
+		"oS": 0,
 		"rwU": 0,
 		"sI": 0,
 		"sU": 0
-		},
-	"/products_page.min.css": {
-		"aP": 1,
-		"bl": 0,
-		"ft": 16,
-		"ma": 0,
-		"oA": 0,
-		"oAP": "/products_page.min-min.css",
-		"oF": 0,
-		"oS": 3
-		},
-	"/products_page.min.css.map": {
-		"cB": 0,
-		"ft": 8192,
-		"hM": 0,
-		"oA": 0,
-		"oAP": "/products_page.min.css.map",
-		"oF": 0
-		},
-	"/style-min.css": {
-		"aP": 1,
-		"bl": 0,
-		"ft": 16,
-		"ma": 0,
-		"oA": 0,
-		"oAP": "/style-min-min.css",
-		"oF": 0,
-		"oS": 3
-		},
-	"/style.css": {
-		"aP": 1,
-		"bl": 0,
-		"ft": 16,
-		"ma": 0,
-		"oA": 0,
-		"oAP": "/style-min.css",
-		"oF": 0,
-		"oS": 3
 		}
 	},
 "hooks": [
@@ -176,15 +83,15 @@
 "manualImportLinks": {
 	},
 "projectAttributes": {
-	"creationDate": 587409321.12094796,
-	"displayValue": "FullShoppingCart",
-	"displayValueWasSetByUser": 1,
-	"iconImageName": "meme-cryingJordan",
+	"creationDate": 589233540.15011096,
+	"displayValue": "less",
+	"displayValueWasSetByUser": 0,
+	"iconImageName": "meme-fry",
 	"iconImageWasSetByUser": 0
 	},
 "projectSettings": {
 	"abortBuildOnError": 1,
-	"alwaysUseExternalServer": 1,
+	"alwaysUseExternalServer": 0,
 	"animateCSSInjections": 1,
 	"autoBuildNewItems": 1,
 	"autoprefixerEnableIEGrid": 0,
@@ -1634,7 +1541,7 @@
 			}
 		},
 	"esLintSourceType": 0,
-	"externalServerAddress": "http://localhost:8000",
+	"externalServerAddress": "http://localhost:8888",
 	"gitIgnoreBuildFolder": 1,
 	"hideConfigFile": 0,
 	"jsCheckerReservedNamesString": "",
