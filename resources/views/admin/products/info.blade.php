@@ -1,8 +1,5 @@
 @extends('layout')
 
-@section('css')
-    <link rel="stylesheet" href="{{URL::asset('css/products_page.min.css')}}">
-@endsection
 @section('title')
     Produto
 @endsection

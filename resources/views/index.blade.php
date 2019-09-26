@@ -1,11 +1,5 @@
 @extends('layout')
 
-@section('css')
-    <link rel="stylesheet" href="{{URL::asset('css/home.css')}}">
-    <link rel="stylesheet" href="{{URL::asset('js/plugins/owlcarousel/assets/owl.carousel.min.css')}}">
-    <link rel="stylesheet" href="{{URL::asset('js/plugins/owlcarousel/assets/owl.theme.default.min.css')}}">
-@endsection
-
 @section('title')
     Home
 @endsection
@@ -22,7 +16,5 @@
         </ul>
     </div>
     
-    <script src="{{URL::asset('js/plugins/jQuery/jquery.min.js')}}"></script>
-    <script src="{{URL::asset('js/plugins/owlcarousel/owl.carousel.min.js')}}"></script>
     <script src="{{URL::asset('js/main.js')}}"></script>
 @endsection
